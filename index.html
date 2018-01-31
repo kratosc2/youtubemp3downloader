@@ -1,0 +1,76 @@
+<html>
+
+	<script>
+        $(".do-nicescrol").niceScroll();  // let's do the magic! 
+	</script>
+<style>
+.scroll-wrapper {
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative;
+}
+
+
+body{background-color:seagreen; }
+
+ul {overflow:hidden;margin:0px; padding:0; height:25px; width:100%; background-color:#222; border-top-left-radius:2px; border-top-right-radius:2px;}
+
+ul:hover {opacity:0.5; height:70px; border-bottom-left-radius:10px; border-bottom-right-radius:10px; transition:1s;}
+
+.ctd {text-align:center; color:seagreen;margin-top:3px;letter-spacing:2px;}
+.ctd1 {text-align:center; color:seagreen;padding-top:5px;letter-spacing:2px;}
+
+.submen {width:80%;height:80%;background-color:#222;margin:auto;margin-top:25px;opacity:0.8;overflow:auto;}
+.submenhead{width:100%;height:30px;background-color:#000;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
+audio {width:100%;margin-top:0px;background-color:#000;}
+
+</style>
+
+<ul><div class=ctd>MENU</div> </ul>
+	<div class=submen>
+		<div class=submenhead><div class=ctd1>LIST</div></div>
+
+		
+		<audio id="audioplayer" controls>
+			<source id="mpeg_src" src="True.mp3" type="audio/mpeg">
+			<source id="mpeg_src" src="ceza.mp3"type="audio/mpeg">
+		</audio>
+		<h1>text</h1>	
+		<h1>text2</h1>
+		<h1>text3</h1>
+                <h1>text</h1>   
+                <h1>text2</h1>
+                <h1>text3</h1>
+                <h1>text</h1>   
+                <h1>text2</h1>
+                <h1>text3</h1>
+                <h1>text</h1>   
+                <h1>text2</h1>
+                <h1>text3</h1>
+                <h1>text</h1>   
+                <h1>text2</h1>
+                <h1>text3</h1>
+
+
+
+
+	</div>
+	<button onclick="myFunction()" type="button">True</button>
+	<button onclick="myFunction2()" type="button">Ceza</button>
+	<button onclick="myFunction3()" type="button">Med</button>
+	<script>
+		function myFunction(){
+		document.getElementById("mpeg_src").src="True.mp3";
+		document.getElementById("audioplayer").load();
+		}
+		function myFunction2(){
+		document.getElementById("mpeg_src").src="ceza.mp3";
+		document.getElementById("audioplayer").load();
+		}
+		function myFunction3(){
+		document.getElementById("mpeg_src").src="med.mp3";
+		document.getElementById("audioplayer").load();
+		}
+
+	</script>
+</html>
