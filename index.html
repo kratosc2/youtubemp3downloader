@@ -28,7 +28,6 @@ img {width:10px;height:10px;}
 		
 			<audio id="audioplayer" controls>
 			<source id="mpeg_src" src="True.mp3" type="audio/mpeg">
-			<source id="mpeg_src" src="ceza.mp3"type="audio/mpeg">
 			</audio>
 	
 <div class=listp>True Detective - Intro / Opening Song - Theme (The Handsome Family - Far From Any Road)<button onclick="myFunction()" class=playbutton><img src =1.png></img></button></div>
@@ -45,6 +44,12 @@ img {width:10px;height:10px;}
 	</div>
 
 	<script>
+		var aud = document.getElementById("audioplayer");
+		aud.onended = function() {
+		    document.getElementById("mpeg_src").src="ceza.mp3";
+		    aud.load();
+		    aud.play();	
+		};
 		function myFunction(){
 		document.getElementById("mpeg_src").src="True.mp3";
 		document.getElementById("audioplayer").load();

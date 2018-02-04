@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<style>
+.parad{
+		opacity:1;
+		width:505px;
+        height:500px;
+        border-style:solid;
+        border-width:5px;
+
+}
+
+
+.asd{
+width:505px;
+height:500px;
+border-style:solid;
+border-width:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<body>
+
+<div class=asd>
+<form action="upload.php" method="post" enctype="multipart/form-data" id="myform"target="popup(this)">
+<input type="file" id="dosya" name="dosya" class="parad"></input>
+<input type ="submit" id ="upload" value="dosya"></input>
+</form>
+</div>
+<p id="demo"></p>
+
+
+
+
+
+<script>
+document.getElementById("dosya").addEventListener("change", displayDate);
+function displayDate() {
+    
+    document.getElementById("dosya").action="/upload.php";
+    var x = document.getElementById("dosya").value;
+    document.getElementById("demo").innerHTML = "The value of the action attribute was changed to /action_page.php.";
+    alert (x);
+    document.getElementById("myform").submit()
+	function popup(form){
+	window.open('upload.php','formpopup','width=400,height=400,resizeable,scrollbars');
+	form.target='formpopup';
+	}	
+}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
