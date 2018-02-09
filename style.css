@@ -1,0 +1,140 @@
+.durationline{
+  position:relative;
+  top:24px;
+  width:100%;
+  height:20px;
+ 
+   background: linear-gradient(to right, rgba(0,100,0,0.7), rgba(0,65,0,1));
+  float:left;
+  overflow:hidden;
+  
+}
+.pointer{
+  position:relative;
+  bottom:0px;
+  width:100%;
+  height:20px;
+  background-color:#000;
+  transition:0.3s;
+  opacity:0.6;
+}
+.timec {
+  padding:3px;
+  position:relative;
+  font-size:10px;
+  float:left;
+  color:white;
+  border-style:solid;
+  border-color:darkgreen;
+  border-width:1px;
+  background-color:transparent;
+  opacity:1;
+  transition:0.3s;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  
+}
+.plybtn {
+  position:relative;
+  float:left;
+  margin:0.1%;
+  left:1%;
+  top:100px;
+}
+
+
+
+
+.box{
+  position:relative;
+  display:inline-block;
+  background-color:seagreen;
+width:100%;
+  height:200px;
+  
+}
+
+.next{
+  position:relative;
+  float:left;
+  margin:0.1%;
+  left:38%;
+  top:100px;
+}
+
+.volume{
+  position:relative;
+  left:90%;
+  top:100px;
+  width:10%;
+  height:20px;
+  background-color:black;
+}
+.volumepointer{
+  transition:0.5s;
+  height:20px;
+  width:100%;
+     background: linear-gradient(to right, rgba(0,100,0,0.7), rgba(0,65,0,1));
+}
+
+img {
+  margin-top:3px;
+  width:10px;
+  height:15px;
+}
+.volimg {
+  width:25px;
+  height:25px;
+  left:88%;
+  position:relative;
+  top:73px;
+}  
+.volimgimg{
+  position:relative;
+  bottom:30px;
+  width:25px;
+  height:25px;
+}
+
+.nowplay{
+  width:900px;
+  padding:5px;
+  position:relative;
+  top:50px;
+  left:5%;
+  color:white;
+  
+}
+
+.list {
+  margin-top:1px;
+  background-color:seagreen;
+  padding:15px;
+  
+  
+}
+
+.list:hover{
+	transform:scale(1.01);
+	transition:1s;
+  background-color:#111;
+
+}
+hr {
+  margin-bottom:30px;
+  background-color:white;
+  height:1px;
+}
+a {
+  text-decoration:none;
+
+
+}
+
+
+
+b {
+  color:white;
+  font-size:10px;
+
+}
