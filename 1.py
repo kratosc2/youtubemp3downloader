@@ -3,15 +3,17 @@
 
 import cgi, cgitb, os, sys
 from bs4 import BeautifulSoup
+import string
+import random
+import eyed3
+reload(sys)
+sys.setdefaultencoding('UTF-8')
 
-path = '/var/www/html/upload'
+
+
+path  = '/var/www/html/upload/'
 files = os.listdir(path)
-c = 0
 
-
-
-
-        
 
 
 
@@ -19,28 +21,46 @@ c = 0
 print 'Content-Type: text/html; charset=UTF-8'
 print
 print '''
-<html>
-<script>
-function play(c){
-        alert(c);
-        player = document.getElementById("aplayer");
-        player.src = c;
-        player.load();
-        player.play();
-        alert(c);
-        }
-</script>
-<head>
-  <title>Upload File</title>
-  <p> Welcome </p>
-  <audio id='aplayer' controls></audio>
-'''
-for x in files:
-    x = 'http://127.0.0.1/upload/'+x.encode('ascii','ignore')
-    print len(x)
-    
-    print '<a onclick =play(c="'+x+'") href=#>' + 'changeMusic</a>'
-'''
-</head>
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="http://127.0.0.1/style.css">
+
 <body>
+  <title>Upload File</title>
+  <audio hidden id="aplayer" controls>
+<source src="http://94.54.178.57/True.mp3">
+</audio>
+
+  <div class = "box">
+    <div id =nowplay class = "nowplay"> True Detective - Intro / Opening Song - Theme (The Handsome Family - Far From Any Road)  Now Playing... </div>
+  <button id = "ply" class="plybtn" onclick="playb()"> <img src=http://94.54.178.57/play.png></button>
+  <button id = "mutebtn" class="plybtn" onclick="muteb()"> <img src=http://94.54.178.57/loud.png></button>
+  <button id = "mute" class="next" onclick="muteb()"> < </button>
+  <button id = "mute" class="next" onclick="muteb()"> > </button>
+
+    <div id = "vol" onclick ="volumechng(event)" class="volume"> <div id ="volpoint" class = "volumepointer"> </div></div>
+
+
+<div onclick ="getpos(event)" id = "duratline" class= "durationline">
+  <div onclick= "changeline(event)" id = "point" class= "pointer">
+    <div id = "time" class="timec">0:00</div>
+
+  </div>
+</div>
+    <div class = "volimg"> <img class="volimgimg" src=http://94.54.178.57/loud.png> </div>
+</div>
+
+'''
+
+for x in files:
+    xa = 'http://127.0.0.1/upload/'+x
+    xa = xa.replace(' ','%20')
+    x = x.replace('.mp3','')
+    print '<div onclick=play(c="'+xa+'") class=list><a onclick =play(c="'+xa+'") href=#><b>' +x+ '</b></a></div>'
+print'''
+
+</body>
+<script src = "http://127.0.0.1/player.js"></script>
+
+
+</html>
 '''
