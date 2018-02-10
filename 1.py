@@ -13,7 +13,7 @@ sys.setdefaultencoding('UTF-8')
 path  = '/var/www/html/upload/'
 files = os.listdir(path)
 
-
+ab = 0
 
 
 
@@ -34,7 +34,7 @@ print '''
   <button id = "ply" class="plybtn" onclick="playb()"> <img src=http://94.54.178.57/play.png></button>
   <div onclick=getpos(event) onmousedown=funcstart() onmousemove=func(event) onmouseup=funcstop() id="duratline" class= "durationline">
  <div class=selectedduration></div> 
-  <div onmousemove=selecthov(event)  onmouseout="outhover()" onclick=outhover() id = "point" class= "pointer">
+  <div onmousemove=selecthov(event)  onmouseover=selecthov(event) onmouseout="outhover()" onclick=outhover() id = "point" class= "pointer">
 
     <div id = "time" class="timec">0:00</div>
 
@@ -46,16 +46,19 @@ print '''
     <div id = "vol" onclick ="volumechng(event)" class="volume"> <div id ="volpoint" class = "volumepointer"> </div></div>
 
 
-
+<div style=margin-top:30px class=aline></div>
+<span id=tooltipid class =tooltip></span>
 </div>
-
+<p style=text-align:center;color:white;background:rgb(0,100,0);> List 
 '''
 
 for x in files:
+    ab = ab + 1 
     xa = 'http://127.0.0.1/upload/'+x
     xa = xa.replace(' ','%20')
     x = x.replace('.mp3','')
-    print '<div onclick=play(c="'+xa+'") class=list><a onclick =play(c="'+xa+'") href=#><b id=namet >' +x+ '</b></a></div>'
+    x = str(ab) + ' - ' + x
+    print '<div onclick=play(c="'+xa+'") class=list><a onclick =play(c="'+xa+'") href=#><b id=namet >'+x+'</b></a></div>'
 print'''
 
 </body>
