@@ -147,24 +147,26 @@ function selecthov(event){
 	var durationline = document.getElementById('duratline');
 	var pointerhov = document.getElementById('point');
 	var timer = document.getElementById('time');
-	var x = event.clientX - 79;
-	var y = event.clientY - 79;
+	var x = event.pageX - 79;
+	var y = event.pageY - 79;
 	if (x < 0){
 		x = 0
 	}
 	var ap = durationline.offsetWidth;
-	var sperc = parseInt(x/(offset/100)) ;
+	var sperc = x/(offset/100) ;
 	var sstime = duration * (sperc/100);
 	var curr = 100 * (player.currentTime / duration);
 	var secs = parseInt(sstime % 60);
 	var mins = parseInt(sstime / 60 );
+	var down = player.seekable.end(0);
 	if (secs < 10){
 		secs = '0' + secs;
 	}
 	document.getElementById('tooltipid').style.top = y + 30 + 'px';
 	document.getElementById('tooltipid').style.left = x + 60 + 'px';
-	document.getElementById('tooltipid').innerHTML = mins +':' +secs +  ' ' + sstime;
+	document.getElementById('tooltipid').innerHTML = mins +':' +secs +  ' ' + sstime + 'offSet:'+ offset + 'pos:' + x + ' ' + down;
 	pointerhov.style.background = "linear-gradient(to right,seagreen "+curr+"%,gold "+(curr + 1)+"%,gold "+sperc+"%,  gold "+sperc+"%,white "+sperc+ "%)";
+	pointerhov.style.transition = "1s";
 }
 
 function outhover(){
