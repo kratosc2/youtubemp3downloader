@@ -12,8 +12,8 @@ function play(d){
 
 	
 	}
-	var nametrack = document.getElementById(d).getAttribute('href');
-	var na = document.getElementById(d).getAttribute('name');
+	var nametrack = document.getElementById(c).getAttribute('href');
+	var na = document.getElementById(c).getAttribute('name');
 	var player = document.getElementById('aplayer');
 	nowplay.innerHTML = nametrack + (' Now Playing...');
         player.src = c;
@@ -24,6 +24,39 @@ function play(d){
 	document.getElementById(d).style.backgroundColor = "gold";
 
 }
+
+
+function loophov(){
+	document.getElementById('loop').style.backgroundColor = "gold";
+	document.getElementById('loop').style.borderRadius="30%";
+}
+
+function loophovout(){
+	if (player.loop == false){
+	 document.getElementById('loop').style.backgroundColor = "transparent";
+         document.getElementById('loop').style.borderRadius="0%";
+
+
+}
+}
+function loop(){
+	if (player.loop == false){
+		player.loop =true;
+        	document.getElementById('loop').style.backgroundColor = "gold";
+        	document.getElementById('loop').style.borderRadius="30%";
+	
+	}
+	else{
+         	document.getElementById('loop').style.backgroundColor = "tansparent";
+         	document.getElementById('loop').style.borderRadius="0%";
+
+		player.loop = false;
+
+	}
+	
+}
+
+
 
 function funcstart(){
 	lock = true;
@@ -57,13 +90,13 @@ function playb(){
   var player = document.getElementById("aplayer");
   if (player.paused){
     var btn = document.getElementById("ply");
-    btn.innerHTML = "<img src=http://94.54.178.57/pause.png>"
+    btn.src = "http://94.54.178.57/pause.png";
     player.play();
 
   }
   else{
     var btn = document.getElementById("ply");
-    btn.innerHTML = "<img src=http://94.54.178.57/play.png>";
+    btn.src = "http://94.54.178.57/play.png";
     player.pause();
   }
 
@@ -89,37 +122,17 @@ function getpos(event){
 
 vol.addEventListener("click",volumechng);
 function volumechng(event){
-  var al = document.getElementById('nowplay');
-  var volum = document.getElementById("vol");
-  var post = volum.offsetWidth;
-  var clickp = event.clientX;
-  var screenw = screen.width;
-  var posit = screenw - clickp;
-  var pointvol = document.getElementById("volpoint");
-  var player = document.getElementById("aplayer");
-  var diff = screenw - post;
-  var varr = screenw - diff;
-  var abc  = clickp/100;
-  var varrcli = clickp - screenw;
-  var theend = parseInt(varrcli/(varr/100));
-  var th = theend + 105;
-  if (th > 99) {
-    var a = 1;
-  }
-  else {
-    a = 0;
-  }
-  if (th < 10){
-    th = "0" + th;
-  }
-  else {
-    th = th;
-  }
-
-  pointvol.style.width = th + "%";
-  var the = a + "." + (th);
-  player.volume = abc;
-  al.innerHTML = the;
+	var player = document.getElementById('aplayer');
+	var voldiv = document.getElementById('volpoint');
+	var offset = document.getElementById('vol').offsetWidth;
+	var x = event.clientX ;
+	var point = offset / offset;
+	var vol = x / offset;
+	var s = screen.width - 35 - 200;
+	var rect = voldiv.getBoundingClientRect();
+	var vol = (parseFloat(x-rect.left)/offset)  ;
+	voldiv.style.width = x - rect.left + 'px';
+	player.volume = vol;
 }
 function muteb(){
   var player = document.getElementById("aplayer");
@@ -173,7 +186,7 @@ function selecthov(event){
 	}
 	document.getElementById('tooltipid').style.top = y + 30 + 'px';
 	document.getElementById('tooltipid').style.left = x + 60 + 'px';
-	document.getElementById('tooltipid').innerHTML = mins +':' +secs + ' '+ tn;
+	document.getElementById('tooltipid').innerHTML = mins +':' +secs + ' ';
 	document.getElementById('tooltipid').style.opacity = "1";
 	pointerhov.style.background = "linear-gradient(to right,seagreen "+curr+"%,gold "+(curr + 1)+"%,gold "+sperc+"%,  gold "+sperc+"%,white "+sperc+ "%)";
 	pointerhov.style.transition = "1s";
@@ -205,7 +218,7 @@ function updateplayer(){
 
   time.innerHTML = mins + ":" + secs ;
         if (lockhover == false){
-  point.style.background = "linear-gradient(to right, seagreen "+percent+"%,white "+percent+ "%)";
+  point.style.background = "linear-gradient(to right, seagreen "+percent+"%,black "+percent+ "%)";
 
         }
 }
