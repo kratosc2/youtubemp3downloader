@@ -32,7 +32,7 @@ print '''
   <div class = "box">
   <div class =aline> </div>
     <div id =nowplay class = "nowplay"> True Detective - Intro / Opening Song - Theme (The Handsome Family - Far From Any Road)  Now Playing... </div>
-  <button id = "ply" class="plybtn" onclick="playb()"> <img src=http://94.54.178.57/play.png></button>
+  <img  src=http://127.0.0.1/pause.png id = "ply" class="plybtn" onclick="playb()"> <img onmouseout = loophovout() onmouseover=loophov() src=http://127.0.0.1/loop.png id = "loop" class="loopbtn" onclick="loop()">
   <div onclick=getpos(event) onmousedown=funcstart() onmousemove=func(event) onmouseup=funcstop() id="duratline" class= "durationline">
  <div class=selectedduration></div> 
   <div onmousemove=selecthov(event)  onmouseover=selecthov(event) onmouseout="outhover()" onclick=outhover() id = "point" class= "pointer">
@@ -42,7 +42,7 @@ print '''
   </div>
 </div>
 
-  <button id = "mutebtn" class="plybtn1" onclick="muteb()"> <img src=http://94.54.178.57/loud.png></button>
+  <img  id = "mutebtn" class="volbtn" onclick="muteb()" src=http://94.54.178.57/loud.png>
 
     <div id = "vol" onclick ="volumechng(event)" class="volume"> <div id ="volpoint" class = "volumepointer"> </div></div>
 
@@ -57,6 +57,7 @@ for x in files:
     ab = ab + 1 
     xa = 'http://127.0.0.1/upload/'+x
     xa = xa.replace(' ','%20')
+    xa = xa.replace('#','%23')
     x = x.replace('.mp3','')
     x = str(ab) + ' - ' + x
     print '<div name="'+str(ab)+'" id="'+xa+'" href="'+x+'" onclick=play(c="'+xa+'") class=list><a onclick =play(c="'+xa+'") href=#><b tid ="'+x+'" id=namet >'+x+'</b></a></div>'
