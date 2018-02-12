@@ -3,20 +3,32 @@ body{
 
 }
 .durationline{
-	border-style:solid;
-	border-width:1px;
-	border-radius:1px;
-	border-color:gold;
-	margin-top:25px;
-	position:relative;
-  	width:75%;
-  	height:20px;
- 	top:6px; 
-        background: linear-gradient(to right, rgba(0,100,0,0.7), rgba(0,65,0,1));
-	float:left;
-  	overflow:hidden;
-  
+        border-style:solid;
+        border-width:1px;
+        border-radius:5px;
+        border-color:gold;
+        margin-top:30px;
+        position:relative;
+        width:auto;
+	min-width:60%;
+        height:5%;
+        top:6px;
+        background-color:darkgreen;
+        float:left;
+        overflow:hidden;
+
 }
+
+.list {
+  margin-top:1px;
+  background-color:#444;
+  padding:10px;
+  background:rgb(0,100,0);
+
+}
+
+
+
 .pointer{
   position:relative;
   bottom:0px;
@@ -29,21 +41,12 @@ body{
 
 
 
-.timec {
-  padding:3px;
-  position:relative;
-  font-size:10px;
-  text-align:center;
-  float:left;
-  color:black;
-  border-style:solid;
-  border-color:darkgreen;
-  border-width:0px;
-  background-color:transparent;
-  opacity:1;
-  transition:0.3s;
-  border-top-right-radius:5px;
-  border-bottom-right-radius:5px;
+.timec{  
+	float:left;
+	position:relative;
+	margin-top:31px;
+	margin-right:5px;
+	margin-left:5px;
   
 }
 .plybtn {
@@ -106,7 +109,7 @@ body{
         height:20px;
         float:left;
         margin-top:25px;
-        margin-right:10px;
+        margin-right:20px;
 	margin-left:10px;
         background-color:transparent;
 }
@@ -125,6 +128,10 @@ body{
 
 
 .box{
+	border-top-width:20px;
+	border-radius-top:50px;
+	border-color:gold;
+	border-style:solid;
 	border-radius:10px;
   position:relative;
   display:inline-block;
@@ -142,24 +149,124 @@ body{
   top:100px;
 }
 
+.box2{
+	border-top-width:20px;
+	border-left-width:1px;
+	border-right-width:1px;
+	border-bottom-width:1px;	
+	margin-top:10px;
+	padding-bottom:10px;
+	width:100%;
+	border-style:solid;
+	border-radius:10px;
+	border-color:gold;	
+	height:100%;
+}
+
+
 .volume{
+	background-color:seagreen;
+	border-radius:5px;
 	border-style:solid;
 	border-width:1px;
 	border-color:gold;
-	margin-top:31px;
+	margin-top:35px;
 	float:left;
-  left-height:10px;
-  position:relative;
-  width:100px;
-  height:20px;
-  background-color:black;
+  	left-height:10px;
+  	position:relative;
+	width:10%;
+	height:5%;
+
 }
 .volumepointer{
+	background-color:darkgreen;
+	border-radius:5px;
   transition:0.5s;
-  height:20px;
-  width:100px;
+  height:100%;
+  width:100%;
      background-color:green;
 }
+
+@media (min-width:10px){
+	.durationline {
+		transition:0.3s;
+		min-width:32%;
+	}
+
+}
+@media(min-width:400px){
+        .durationline{
+                transition:0.3s;
+                min-width:37%;
+        }
+}
+
+@media(min-width:600px){
+        .durationline{
+                transition:0.3s;
+                min-width:43%;
+        }
+}
+
+
+@media(min-width:700px){
+        .durationline{
+                transition:0.3s;
+                min-width:48%;
+        }
+}
+
+
+
+@media(min-width:800px){
+        .durationline{
+                transition:0.3s;
+                min-width:53%;
+        }
+}
+
+
+
+@media(min-width:1000px){
+	.durationline{
+		transition:0.3s;
+		min-width:63%;
+	}
+}
+
+
+@media(min-width:1300px){
+        .durationline{
+                transition:0.3s;
+                min-width:60%;
+        }
+}
+@media(min-width:1450px){
+        .durationline{
+                transition:0.3s;
+                min-width:65%;
+        }
+}
+
+
+
+@media(min-width:1900px){
+        .durationline{
+                transition:0.3s;
+                min-width:70%;
+        }
+}
+
+@media(min-width:2700px){
+        .durationline{
+                transition:0.3s;
+                min-width:82%;
+        }
+}
+
+
+
+
 
 img {
   margin-top:3px;
@@ -181,19 +288,19 @@ img {
 }
 
 .nowplay{
-	float:top;
-	font-size:10px;
-  width:50%;
+	float:center;
+	font-size:12px;
+  width:60%;
   padding:5px;
-  position:relative;
- 
-  left:1%;
+  position:relative; 
+  left:15%;
   color:black;
+  top:25px;
   
 }
 
 .list {
-  margin-top:1px;
+  margin-top:0.2%;
   background-color:#444;
   padding:10px;
   background:rgb(0,100,0); 
@@ -238,17 +345,6 @@ b {
 	height:0px;
 	width:100%;
 	background-color:gold;
-
-}
-
-.plybtn1{
-	height:10px;
-	padding:5px;
-	width:25px;
-	margin-top:30px;
-	margin-left:20px;
-	margin-right:5px;
-	float:left;	
 }
 
 
@@ -268,3 +364,11 @@ b {
 
 }
 
+.timed{
+	float:left;
+	position:relative;
+	margin-left:10px;
+	margin-top:30px;
+
+
+}

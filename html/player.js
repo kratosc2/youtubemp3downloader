@@ -3,14 +3,11 @@ player.addEventListener("timeupdate", updateplayer, false);
 var nowplay = document.getElementById('nowplay');
 var lock = false;
 var tn = 0;
-
 function play(d){
 	if (tn > 0){
 	var before = document.getElementsByName(tn)[0].id;
         document.getElementById(before).style.borderRadius = "5px";
         document.getElementById(before).style.backgroundColor = "green";
-
-	
 	}
 	var nametrack = document.getElementById(c).getAttribute('href');
 	var na = document.getElementById(c).getAttribute('name');
@@ -24,36 +21,27 @@ function play(d){
 	document.getElementById(d).style.backgroundColor = "gold";
 
 }
-
-
 function loophov(){
 	document.getElementById('loop').style.backgroundColor = "gold";
 	document.getElementById('loop').style.borderRadius="30%";
 }
-
 function loophovout(){
 	if (player.loop == false){
 	 document.getElementById('loop').style.backgroundColor = "transparent";
          document.getElementById('loop').style.borderRadius="0%";
-
-
-}
+	}
 }
 function loop(){
 	if (player.loop == false){
 		player.loop =true;
         	document.getElementById('loop').style.backgroundColor = "gold";
         	document.getElementById('loop').style.borderRadius="30%";
-	
 	}
 	else{
          	document.getElementById('loop').style.backgroundColor = "tansparent";
          	document.getElementById('loop').style.borderRadius="0%";
-
 		player.loop = false;
-
 	}
-	
 }
 
 
@@ -65,11 +53,7 @@ function funcstart(){
 
 function funcstop(){
 	lock = false;
-
 }
-
-
-
 function func(event){
     if (lock == true){
 	var player = document.getElementById('aplayer');
@@ -83,9 +67,6 @@ function func(event){
 
 	}
 }
-
-
-
 function playb(){
   var player = document.getElementById("aplayer");
   if (player.paused){
@@ -107,11 +88,13 @@ var duratline = document.getElementById('duratline');
 duratline.addEventListener("click",getpos);
 
 function getpos(event){
+  var re = document.getElementById('duratline').getBoundingClientRect();
   var he = document.getElementById("point");
-  var x = event.clientX - 79;
+  var x = event.clientX - re.left;
   var player = document.getElementById("aplayer");
   var durat = player.duration;
   var y = document.getElementById('duratline').offsetWidth
+  var re = document.getElementById('duratline').getBoundingClientRect();
   var z = x / (y/100);
   player.currentTime = durat * (z/100);
 
@@ -142,14 +125,14 @@ if (player.volume == 1){
   pointvol.style.width = 0 + "%";
   player.volume = 0;
   var btnna = document.getElementById("mutebtn");
-  btnna.innerHTML = "<img src=http://94.54.178.57/mute.png>";
+  btnna.src = "http://94.54.178.57/mute.png";
 }
   else{
     var pointvol = document.getElementById("volpoint");
     pointvol.style.width = 100 +"%";
     player.volume = 1;
     var btnna = document.getElementById("mutebtn");
-    btnna.innerHTML = "<img src=http://94.54.178.57/loud.png>";
+    btnna.src ="http://94.54.178.57/loud.png";
   }
 }
 
@@ -170,7 +153,8 @@ function selecthov(event){
 	var durationline = document.getElementById('duratline');
 	var pointerhov = document.getElementById('point');
 	var timer = document.getElementById('time');
-	var x = event.pageX - 79;
+	var rect = durationline.getBoundingClientRect();
+	var x = event.pageX - rect.left;
 	var y = event.pageY - 79;
 	if (x < 0){
 		x = 0
@@ -188,9 +172,15 @@ function selecthov(event){
 	document.getElementById('tooltipid').style.left = x + 60 + 'px';
 	document.getElementById('tooltipid').innerHTML = mins +':' +secs + ' ';
 	document.getElementById('tooltipid').style.opacity = "1";
-	pointerhov.style.background = "linear-gradient(to right,seagreen "+curr+"%,gold "+(curr + 1)+"%,gold "+sperc+"%,  gold "+sperc+"%,white "+sperc+ "%)";
-	pointerhov.style.transition = "1s";
+	if (curr * 2 > sstime){
+		pointerhov.style.background = "linear-gradient(to right,seagreen "+(sperc + 1)+"%,gold "+sperc+"%,gold "+(curr + 1)+"%,gold "+sperc+"%,  gold "+sperc+"%,green "+sperc+ "%)";
+        	pointerhov.style.transition = "1s";
 
+	}
+	else{
+	pointerhov.style.background = "linear-gradient(to right,seagreen "+curr+"%,gold "+(curr + 1)+"%,gold "+sperc+"%,  gold "+sperc+"%,green "+sperc+ "%)";
+	pointerhov.style.transition = "1s";
+	}
 
 }
 
@@ -210,6 +200,10 @@ function updateplayer(){
         var time = document.getElementById("time")
         var secs = parseInt(player.currentTime % 60);
         var secstomin = parseInt(player.currentTime);
+	var timeend = document.getElementById('timed');
+	var durationmin = parseInt(player.duration / 60);
+	var durationsecs = (player.duration % 60);
+	timeend.innerHTML = parseInt(durationmin) + ':' + parseInt(durationsecs);
   if (secs < 10){
     secs = "0" + secs
   }
@@ -218,23 +212,34 @@ function updateplayer(){
 
   time.innerHTML = mins + ":" + secs ;
         if (lockhover == false){
-  point.style.background = "linear-gradient(to right, seagreen "+percent+"%,black "+percent+ "%)";
+  point.style.background = "linear-gradient(to right, seagreen "+percent+"%,darkgreen "+percent+ "%)";
 
         }
 }
 
+var ars = document.getElementById('lasttrack');
+ars = ars.getAttribute('data');
 
 function nextrack(){
 	var before = document.getElementsByName(tn)[0].id;
 	document.getElementById(before).style.borderRadius = "5px";
         document.getElementById(before).style.backgroundColor = "green";
-
-
 	var nowplayid = document.getElementById('nowplay');
 	var nextdata = parseInt(parseInt(tn)+ 1);
 	var player = document.getElementById('aplayer');
+	if (ars == tn){
+		next = document.getElementsByName(1)[0].id;
+		nowplayid.innerHTML = document.getElementById(next).getAttribute('href')+' Now Playing ...' ;
+		player.src = next;
+		player.load();
+		player.play();
+		document.getElementById(next).style.borderRadius = "5px";
+        	document.getElementById(next).style.backgroundColor = "gold";
+        	document.getElementById(next).style.transition = "1s";
+		tn = 1;
+	}
+	else {
 	var next = document.getElementsByName(nextdata)[0].id;
-
 	nowplayid.innerHTML = document.getElementById(next).getAttribute('href')+' Now Playing ...' ;
 	player.src = next;
 	player.load();
@@ -242,11 +247,7 @@ function nextrack(){
 	tn = parseInt(tn) + 1;
         document.getElementById(next).style.borderRadius = "5px";
         document.getElementById(next).style.backgroundColor = "gold";
-
-
+	document.getElementById(next).style.transition = "1s";
+	}
 }
-
-
-
-
 
