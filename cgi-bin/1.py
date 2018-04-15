@@ -23,6 +23,9 @@ print '''
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="http://127.0.0.1/style.css">
 
+
+
+
 <body>
   <title>Upload File</title>
   <audio onended=nextrack() hidden id="aplayer" controls>
@@ -52,8 +55,14 @@ print '''
     <span id=tooltipid class =tooltip></span>
 </div>
 
+<div class = header> 
+    <div class = headeritem><a href=#>Home</a></div>
+    <div class = headeritem><a href=#>List</a></div>
+
+</div>
+
 <div class=box2>
-<p style=text-align:center;color:black;background:rgb(0,100,0);> List 
+<p style=margin:0px;text-align:center;color:black;background:gold;> List </p> 
 '''
 xe = len(files)
 for x in files:

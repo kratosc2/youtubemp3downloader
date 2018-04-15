@@ -1,0 +1,13 @@
+body {
+	background-color:seagreen;
+
+
+}
+
+.navbar {
+	width:100%;
+	position:relative;
+	background-color:darkgreen;
+	float:top;
+
+}

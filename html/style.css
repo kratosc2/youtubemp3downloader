@@ -1,17 +1,53 @@
 body{
 	background-color:seagreen;
+	overflow:auto;
+	
+}
+
+.header {
+
+	position:relative;
+	float:left;
+	
+	border-color:gold;	
+	border-style:solid;
+	border-top-width:10px;
+	border-bottom-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	display:inline-block;
+	width:100%;
+	  background:rgb(0,100,0);
 
 }
+
+a {
+	color:black;
+}
+.headeritem{
+	float:left;
+	padding:10px;
+	margin-left:20px;
+	transition:0.5s;
+	
+}
+.headeritem:hover{
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	background-color:gold;
+
+}
+
 .durationline{
         border-style:solid;
         border-width:1px;
         border-radius:5px;
         border-color:gold;
-        margin-top:30px;
+        margin-top:5px;
         position:relative;
         width:auto;
 	min-width:60%;
-        height:5%;
+        height:10%;
         top:6px;
         background-color:darkgreen;
         float:left;
@@ -44,7 +80,7 @@ body{
 .timec{  
 	float:left;
 	position:relative;
-	margin-top:31px;
+	margin-top:5px;
 	margin-right:5px;
 	margin-left:5px;
   
@@ -58,9 +94,9 @@ body{
 	width:20px;
 	height:20px;
 	float:left;
-	margin-top:25px;
-	margin-right:5px;
-	margin-left:30px;
+	margin-top:0px;
+	margin-right:10px;
+	margin-left:5%;
 }
 
 .plybtn:hover{
@@ -84,7 +120,7 @@ body{
         width:20px;
         height:20px;
         float:left;
-        margin-top:25px;
+        margin-top:0px;
         margin-right:10px;
 	background-color:transparent;
 }
@@ -108,7 +144,7 @@ body{
         width:20px;
         height:20px;
         float:left;
-        margin-top:25px;
+        margin-top:0px;
         margin-right:20px;
 	margin-left:10px;
         background-color:transparent;
@@ -128,16 +164,14 @@ body{
 
 
 .box{
-	border-top-width:20px;
-	border-radius-top:50px;
-	border-color:gold;
-	border-style:solid;
-	border-radius:10px;
+ overflow:hidden;	
+  
+  float:left;
   position:relative;
   display:inline-block;
   background:rgb(0,100,0);
   width:100%;
-  height:150px;
+  height:75px;
   
 }
 
@@ -150,17 +184,20 @@ body{
 }
 
 .box2{
+	
 	border-top-width:20px;
 	border-left-width:1px;
 	border-right-width:1px;
 	border-bottom-width:1px;	
-	margin-top:10px;
+	margin-top:50px;
 	padding-bottom:10px;
 	width:100%;
 	border-style:solid;
 	border-radius:10px;
 	border-color:gold;	
-	height:100%;
+	height:50%;
+	overflow:auto;
+	display:inline-block;
 }
 
 
@@ -170,12 +207,12 @@ body{
 	border-style:solid;
 	border-width:1px;
 	border-color:gold;
-	margin-top:35px;
+	margin-top:10px;
 	float:left;
   	left-height:10px;
   	position:relative;
 	width:10%;
-	height:5%;
+	height:10%;
 
 }
 .volumepointer{
@@ -289,13 +326,13 @@ img {
 
 .nowplay{
 	float:center;
-	font-size:12px;
+	font-size:10px;
   width:60%;
   padding:5px;
   position:relative; 
-  left:15%;
+  left:18%;
   color:black;
-  top:25px;
+
   
 }
 
@@ -309,8 +346,8 @@ img {
 
 .list:hover{
 	border-radius:1px;
-	transform:scale(1.01);
-	transition:0.5s;
+	transform:scale(1.0);
+	transition:2s;
   	background-color:seagreen;
 	border-style:solid;
 	border-color:gold;
@@ -365,10 +402,11 @@ b {
 }
 
 .timed{
+	
 	float:left;
 	position:relative;
 	margin-left:10px;
-	margin-top:30px;
+	margin-top:5px;
 
 
 }
