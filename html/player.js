@@ -251,3 +251,23 @@ function nextrack(){
 	}
 }
 
+function changePage (evt, pageName) {
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("box2")
+	for (i = 0; i < tabcontent.length; i++){
+		tabcontent[i].style.display = "none";
+	
+	}
+	tablinks = document.getElementsByClassName("headeritem");
+	for (i = 0; i < tablinks.length; i++){
+		tablinks[i].className = tablinks[i].className.replace(" active","");
+		
+	}
+	document.getElementById(pageName).style.display = "";
+	document.getElementsByClassName('headeritem')[i].style.backgroundColor = "gold";
+	evt.currentTarget.className +=" active";
+
+	
+
+}
+

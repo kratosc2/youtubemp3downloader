@@ -38,6 +38,7 @@ a {
 
 }
 
+
 .durationline{
         border-style:solid;
         border-width:1px;
@@ -171,7 +172,7 @@ a {
   display:inline-block;
   background:rgb(0,100,0);
   width:100%;
-  height:75px;
+  height:85px;
   
 }
 
@@ -213,6 +214,7 @@ a {
   	position:relative;
 	width:10%;
 	height:10%;
+	margin-right:10px;
 
 }
 .volumepointer{

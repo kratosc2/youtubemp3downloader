@@ -56,12 +56,12 @@ print '''
 </div>
 
 <div class = header> 
-    <div class = headeritem><a href=#>Home</a></div>
-    <div class = headeritem><a href=#>List</a></div>
-
+    <div onclick="changePage(event,'home')"class=headeritem ><a href=#>Home</a></div>
+    <div onclick="changePage(event,'list')"class=headeritem ><a href=#>List</a></div>
+    <div onclick="changePage(event,'list')"class=headeritem ><a href=#>Recent</a></div>
 </div>
 
-<div class=box2>
+<div id=list class=box2>
 <p style=margin:0px;text-align:center;color:black;background:gold;> List </p> 
 '''
 xe = len(files)
