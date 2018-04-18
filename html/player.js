@@ -251,23 +251,20 @@ function nextrack(){
 	}
 }
 
-function changePage (evt, pageName) {
-	var i, tabcontent, tablinks;
-	tabcontent = document.getElementsByClassName("box2")
-	for (i = 0; i < tabcontent.length; i++){
-		tabcontent[i].style.display = "none";
-	
-	}
-	tablinks = document.getElementsByClassName("headeritem");
-	for (i = 0; i < tablinks.length; i++){
-		tablinks[i].className = tablinks[i].className.replace(" active","");
-		
-	}
-	document.getElementById(pageName).style.display = "";
-	document.getElementsByClassName('headeritem')[i].style.backgroundColor = "gold";
-	evt.currentTarget.className +=" active";
 
-	
-
+function change(evt, cng){
+var clicked, all, i;
+all = document.getElementsByClassName('headeritem');
+for (i = 0; i < all.length; i++){
+document.getElementsByClassName('headeritem')[i].style.backgroundColor = "darkgreen";
 }
+clicked = document.getElementById(cng);
+clicked.style.backgroundColor = "gold";
+content = clicked.getAttribute('name');
 
+clen = document.getElementsByClassName('box2').length;
+for (a = 0; a < clen; a++){
+document.getElementsByClassName('box2')[a].style.display = 'none';
+}
+document.getElementById(content).style.display = '';
+}

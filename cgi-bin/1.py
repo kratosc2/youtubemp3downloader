@@ -56,13 +56,22 @@ print '''
 </div>
 
 <div class = header> 
-    <div onclick="changePage(event,'home')"class=headeritem ><a href=#>Home</a></div>
-    <div onclick="changePage(event,'list')"class=headeritem ><a href=#>List</a></div>
-    <div onclick="changePage(event,'list')"class=headeritem ><a href=#>Recent</a></div>
+    <div id="home" name="paris" onclick="change(event,'home')"class=headeritem ><a href=#>Home</a></div>
+    <div id="list" name="london" onclick="change(event,'list')"class=headeritem ><a href=#>List</a></div>
+    <div id="recent" name="recent" onclick="change(event,'list')"class=headeritem ><a href=#>Recent</a></div>
+</div>
+<div id=paris class=box2>
+<p style=margin-top:0px;text-align:center;color:black;background:gold;> Home </p>
+
+<div class=homepage>Some words
+</div>
+<img style="width:100%;height:100%;" src = "https://i1.wp.com/www.kerimusta.com/wp-content/uploads/2017/01/at-resimleri_184984.jpg?resize=768%2C480">
+
 </div>
 
-<div id=list class=box2>
-<p style=margin:0px;text-align:center;color:black;background:gold;> List </p> 
+
+<div id=london class=box2>
+<p style=margin-top:0px;text-align:center;color:black;background:gold;> List </p> 
 '''
 xe = len(files)
 for x in files:
